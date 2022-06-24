@@ -31,6 +31,7 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Character Detail"
+        setupBinding()
     }
     
     
