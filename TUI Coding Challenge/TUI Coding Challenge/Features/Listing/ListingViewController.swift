@@ -11,9 +11,12 @@ class ListingViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
     
-    internal static func instantiate() -> ListingViewController? {
+    var viewModel : ListingViewModel!
+
+    internal static func instantiate(with viewModel: ListingViewModel) -> ListingViewController? {
         let storyboard = UIStoryboard(name: .main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ListingViewController") as? ListingViewController
+        viewController?.viewModel = viewModel
         return viewController
     }
 
