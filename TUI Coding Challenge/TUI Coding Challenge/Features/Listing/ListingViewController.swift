@@ -31,7 +31,7 @@ class ListingViewController: UIViewController {
     }
     
     func setupBinding() {
-        viewModel.$characters
+        viewModel.$filteredCharacter
            .receive(on: DispatchQueue.main)
            .sink { [weak self] items in
               self?.tableView.reloadData()
@@ -45,19 +45,29 @@ class ListingViewController: UIViewController {
 
 extension ListingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.openDetailScreen(for: self.viewModel.characters[indexPath.row])
+        self.viewModel.openDetailScreen(for: self.viewModel.filteredCharacter[indexPath.row])
     }
 }
 
 extension ListingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.characters.count
+        return viewModel.filteredCharacter.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "characterItem") as! CharacterItemTableViewCell
-        cell.configure(character: viewModel.characters[indexPath.row])
+        cell.configure(character: viewModel.filteredCharacter[indexPath.row])
         return cell
     }
+}
+
+
+//MARK: - Search Bar delegate
+extension ListingViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.viewModel.updateSearchString(newString: searchText)
+    }
+    
 }
