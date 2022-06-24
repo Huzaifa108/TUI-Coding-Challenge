@@ -22,6 +22,7 @@
 		6B20D1E52865E28B00617C43 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1E42865E28B00617C43 /* ListingViewModel.swift */; };
 		6B20D1EB2865E36400617C43 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6B20D1EA2865E36400617C43 /* IQKeyboardManagerSwift */; };
 		6B20D1EE2865E37A00617C43 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6B20D1ED2865E37A00617C43 /* SDWebImage */; };
+		6B20D1F12865E3D100617C43 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1F02865E3D100617C43 /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		6B20D1DF2865DFFB00617C43 /* ListingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCoordinator.swift; sourceTree = "<group>"; };
 		6B20D1E22865E06E00617C43 /* UIStoryboard + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard + Extension.swift"; sourceTree = "<group>"; };
 		6B20D1E42865E28B00617C43 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
+		6B20D1F02865E3D100617C43 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		6B20D1A22865D78400617C43 /* TUI Coding Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				6B20D1EF2865E3BB00617C43 /* Models */,
 				6B20D1E12865E06100617C43 /* Extensions */,
 				6B20D1DA2865DF9100617C43 /* Utils */,
 				6B20D1D32865DE3200617C43 /* Features */,
@@ -181,6 +184,14 @@
 				6B20D1E22865E06E00617C43 /* UIStoryboard + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B20D1EF2865E3BB00617C43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B20D1F02865E3D100617C43 /* CharacterModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				6B20D1E02865DFFB00617C43 /* ListingCoordinator.swift in Sources */,
 				6B20D1D62865DE4B00617C43 /* ListingViewController.swift in Sources */,
 				6B20D1E32865E06E00617C43 /* UIStoryboard + Extension.swift in Sources */,
+				6B20D1F12865E3D100617C43 /* CharacterModel.swift in Sources */,
 				6B20D1D92865DEA600617C43 /* CharacterItemTableViewCell.swift in Sources */,
 				6B20D1E52865E28B00617C43 /* ListingViewModel.swift in Sources */,
 			);
