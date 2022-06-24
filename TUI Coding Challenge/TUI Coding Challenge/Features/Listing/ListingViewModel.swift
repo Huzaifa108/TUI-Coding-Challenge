@@ -31,6 +31,10 @@ class ListingViewModel: ObservableObject {
         }
     }
     
+    var showAlert : (String)->Void = {
+        alert in
+    }
+    
     init(characterUseCase: CharacterUseCase, coordinator: ListingCoordinator) {
         self.characterUseCase = characterUseCase
         self.coordinator = coordinator
@@ -39,20 +43,27 @@ class ListingViewModel: ObservableObject {
     }
     
     func getCharacters() {
-        self.characterUseCase.getCharacters()
-            .replaceError(with: CharacterResponse.init(characters: []))
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let err):
-                    print("Error is \(err.localizedDescription)")
-                case .finished:
-                    print("Finished")
-                }
-            }, receiveValue: { response in
-                self.characters = response.characters
-                self.filteredCharacter = self.characters
-            })
-            .store(in: &cancellables)
+        if Reachability.isConnectedToNetwork() {
+            self.characterUseCase.getCharacters()
+                .replaceError(with: CharacterResponse.init(characters: []))
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let err):
+                        print("Error is \(err.localizedDescription)")
+                        self.showAlert(err.localizedDescription)
+                    case .finished:
+                        print("Finished")
+                    }
+                }, receiveValue: { response in
+                    self.characters = response.characters
+                    self.filteredCharacter = self.characters
+                })
+                .store(in: &cancellables)
+        }
+        else {
+            print("No Internet connection")
+            self.showAlert("No Internet Connection")
+        }
     }
     
     

@@ -29,6 +29,8 @@
 		6B20D1FC2865E7F100617C43 /* NetworkCharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1FB2865E7F100617C43 /* NetworkCharacterUseCase.swift */; };
 		6B20D1FF2865F3CB00617C43 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1FE2865F3CB00617C43 /* CharacterDetailViewController.swift */; };
 		6B20D2012865F42100617C43 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D2002865F42100617C43 /* CharacterDetailViewModel.swift */; };
+		6B20D20728660EF900617C43 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D20628660EF900617C43 /* Reachability.swift */; };
+		6B20D20928660EFF00617C43 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D20828660EFF00617C43 /* ViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		6B20D1FB2865E7F100617C43 /* NetworkCharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCharacterUseCase.swift; sourceTree = "<group>"; };
 		6B20D1FE2865F3CB00617C43 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		6B20D2002865F42100617C43 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		6B20D20628660EF900617C43 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		6B20D20828660EFF00617C43 /* ViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 		6B20D1E12865E06100617C43 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B20D20828660EFF00617C43 /* ViewController + Extension.swift */,
 				6B20D1E22865E06E00617C43 /* UIStoryboard + Extension.swift */,
 			);
 			path = Extensions;
@@ -213,6 +218,7 @@
 		6B20D1F22865E67300617C43 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6B20D20628660EF900617C43 /* Reachability.swift */,
 				6B20D1F32865E68800617C43 /* NetworkClient.swift */,
 				6B20D1F52865E6A000617C43 /* NetworkProvider.swift */,
 			);
@@ -396,6 +402,8 @@
 				6B20D1FF2865F3CB00617C43 /* CharacterDetailViewController.swift in Sources */,
 				6B20D2012865F42100617C43 /* CharacterDetailViewModel.swift in Sources */,
 				6B20D1D92865DEA600617C43 /* CharacterItemTableViewCell.swift in Sources */,
+				6B20D20928660EFF00617C43 /* ViewController + Extension.swift in Sources */,
+				6B20D20728660EF900617C43 /* Reachability.swift in Sources */,
 				6B20D1E52865E28B00617C43 /* ListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

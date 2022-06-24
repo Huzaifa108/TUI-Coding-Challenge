@@ -32,14 +32,16 @@ class ListingViewController: UIViewController {
     
     func setupBinding() {
         viewModel.$filteredCharacter
-           .receive(on: DispatchQueue.main)
-           .sink { [weak self] items in
-              self?.tableView.reloadData()
-           }
-           .store(in: &cancellables)
-      }
-    
-
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] items in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        self.viewModel.showAlert = { [weak self] alertMessage in
+            self?.alert(desc: alertMessage)
+        }
+    }
 }
 
 
