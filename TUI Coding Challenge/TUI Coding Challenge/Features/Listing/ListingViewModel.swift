@@ -39,4 +39,9 @@ class ListingViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    
+    func openDetailScreen(for character: Character) {
+        self.coordinator.gotoDetailScreen(character: character)
+    }
+    
 }

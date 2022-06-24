@@ -45,7 +45,7 @@ class ListingViewController: UIViewController {
 
 extension ListingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        self.viewModel.openDetailScreen(for: self.viewModel.characters[indexPath.row])
     }
 }
 

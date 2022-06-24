@@ -35,4 +35,12 @@ class ListingCoordinator : Coordinator {
         return viewController
     }
     
+    func gotoDetailScreen(character: Character) {
+        let viewModel = CharacterDetailViewModel(character: character)
+        guard let detailViewController = CharacterDetailViewController.instantiate(with: viewModel) else {
+            fatalError("CharacterDetailViewController not found")
+        }
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
 }
