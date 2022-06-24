@@ -20,6 +20,8 @@
 		6B20D1E02865DFFB00617C43 /* ListingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1DF2865DFFB00617C43 /* ListingCoordinator.swift */; };
 		6B20D1E32865E06E00617C43 /* UIStoryboard + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1E22865E06E00617C43 /* UIStoryboard + Extension.swift */; };
 		6B20D1E52865E28B00617C43 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D1E42865E28B00617C43 /* ListingViewModel.swift */; };
+		6B20D1EB2865E36400617C43 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6B20D1EA2865E36400617C43 /* IQKeyboardManagerSwift */; };
+		6B20D1EE2865E37A00617C43 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6B20D1ED2865E37A00617C43 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B20D1EE2865E37A00617C43 /* SDWebImage in Frameworks */,
+				6B20D1EB2865E36400617C43 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +199,10 @@
 			dependencies = (
 			);
 			name = "TUI Coding Challenge";
+			packageProductDependencies = (
+				6B20D1EA2865E36400617C43 /* IQKeyboardManagerSwift */,
+				6B20D1ED2865E37A00617C43 /* SDWebImage */,
+			);
 			productName = "TUI Coding Challenge";
 			productReference = 6B20D1A02865D78400617C43 /* TUI Coding Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +275,10 @@
 				Base,
 			);
 			mainGroup = 6B20D1972865D78400617C43;
+			packageReferences = (
+				6B20D1E92865E36400617C43 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				6B20D1EC2865E37A00617C43 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 6B20D1A12865D78400617C43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -668,6 +680,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6B20D1E92865E36400617C43 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		6B20D1EC2865E37A00617C43 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6B20D1EA2865E36400617C43 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B20D1E92865E36400617C43 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		6B20D1ED2865E37A00617C43 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B20D1EC2865E37A00617C43 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B20D1982865D78400617C43 /* Project object */;
 }
