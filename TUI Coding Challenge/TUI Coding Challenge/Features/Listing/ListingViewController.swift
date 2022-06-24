@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class ListingViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
     
     var viewModel : ListingViewModel!
+    private var cancellables = Set<AnyCancellable>()
+    
 
     internal static func instantiate(with viewModel: ListingViewModel) -> ListingViewController? {
         let storyboard = UIStoryboard(name: .main)
@@ -23,8 +26,18 @@ class ListingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewModel.getCharacters()
+        setupBinding()
     }
+    
+    func setupBinding() {
+        viewModel.$characters
+           .receive(on: DispatchQueue.main)
+           .sink { [weak self] items in
+              self?.tableView.reloadData()
+           }
+           .store(in: &cancellables)
+      }
     
 
 }
@@ -39,12 +52,12 @@ extension ListingViewController: UITableViewDelegate {
 extension ListingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "characterItem") as! CharacterItemTableViewCell
-        cell.configure()
+        cell.configure(character: viewModel.characters[indexPath.row])
         return cell
     }
 }

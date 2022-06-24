@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterItemTableViewCell: UITableViewCell {
 
@@ -24,8 +25,11 @@ class CharacterItemTableViewCell: UITableViewCell {
     }
 
     
-    func configure() {
-        
+    func configure(character: Character) {
+        self.CharacterNameLabel.text = character.name
+        self.characterImageView.sd_setImage(with: URL(string: character.image),
+                              placeholderImage: UIImage(named: "placeholder"))
     }
+
     
 }

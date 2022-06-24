@@ -27,7 +27,8 @@ class ListingCoordinator : Coordinator {
     }
     
     func makeListingViewController() -> ListingViewController {
-        let viewModel = ListingViewModel(coordinator: self)
+        let useCase = NetworkCharacterUseCase()
+        let viewModel = ListingViewModel(characterUseCase: useCase, coordinator: self)
         guard let viewController = ListingViewController.instantiate(with: viewModel) else {
             fatalError("ListingViewController not found")
         }
