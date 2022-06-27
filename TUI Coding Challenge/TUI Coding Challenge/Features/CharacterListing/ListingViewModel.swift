@@ -25,7 +25,7 @@ class ListingViewModel: ObservableObject {
             }
             else {
                 self.filteredCharacter = self.characters.filter({ character in
-                    character.name.contains(searchString)
+                    character.name.lowercased().contains(searchString.lowercased())
                 })
             }
         }

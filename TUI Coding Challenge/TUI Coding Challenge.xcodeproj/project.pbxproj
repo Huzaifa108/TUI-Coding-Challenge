@@ -31,6 +31,11 @@
 		6B20D2012865F42100617C43 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D2002865F42100617C43 /* CharacterDetailViewModel.swift */; };
 		6B20D20728660EF900617C43 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D20628660EF900617C43 /* Reachability.swift */; };
 		6B20D20928660EFF00617C43 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D20828660EFF00617C43 /* ViewController + Extension.swift */; };
+		6B20D2112869B2BB00617C43 /* MockNetworkCharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D2102869B2BB00617C43 /* MockNetworkCharacterUseCase.swift */; };
+		6B20D2132869B33200617C43 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D2122869B33200617C43 /* TestUtils.swift */; };
+		6B20D2152869B37A00617C43 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D2142869B37A00617C43 /* MockNetworkClient.swift */; };
+		6B20D2172869B44000617C43 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B20D2162869B44000617C43 /* response.json */; };
+		6B20D21A2869B46200617C43 /* TestCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20D2192869B46200617C43 /* TestCharacterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		6B20D2002865F42100617C43 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		6B20D20628660EF900617C43 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		6B20D20828660EFF00617C43 /* ViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
+		6B20D2102869B2BB00617C43 /* MockNetworkCharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkCharacterUseCase.swift; sourceTree = "<group>"; };
+		6B20D2122869B33200617C43 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		6B20D2142869B37A00617C43 /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
+		6B20D2162869B44000617C43 /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
+		6B20D2192869B46200617C43 /* TestCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCharacterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,10 @@
 		6B20D1B92865D78500617C43 /* TUI Coding ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				6B20D21E2869BAF800617C43 /* Network */,
+				6B20D21D2869BAE500617C43 /* Utils */,
+				6B20D2182869B44B00617C43 /* CharacterListing */,
+				6B20D20F2869B2A100617C43 /* MockData */,
 				6B20D1BA2865D78500617C43 /* TUI_Coding_ChallengeTests.swift */,
 			);
 			path = "TUI Coding ChallengeTests";
@@ -164,13 +178,13 @@
 			children = (
 				6B20D1FA2865E7E800617C43 /* Network */,
 				6B20D1F72865E7B700617C43 /* UseCase */,
-				6B20D1D42865DE3A00617C43 /* Listing */,
-				6B20D1FD2865F3AF00617C43 /* Detail */,
+				6B20D1D42865DE3A00617C43 /* CharacterListing */,
+				6B20D1FD2865F3AF00617C43 /* CharacterDetail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		6B20D1D42865DE3A00617C43 /* Listing */ = {
+		6B20D1D42865DE3A00617C43 /* CharacterListing */ = {
 			isa = PBXGroup;
 			children = (
 				6B20D1D72865DE8200617C43 /* tableCell */,
@@ -178,7 +192,7 @@
 				6B20D1DF2865DFFB00617C43 /* ListingCoordinator.swift */,
 				6B20D1E42865E28B00617C43 /* ListingViewModel.swift */,
 			);
-			path = Listing;
+			path = CharacterListing;
 			sourceTree = "<group>";
 		};
 		6B20D1D72865DE8200617C43 /* tableCell */ = {
@@ -241,13 +255,46 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		6B20D1FD2865F3AF00617C43 /* Detail */ = {
+		6B20D1FD2865F3AF00617C43 /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
 				6B20D1FE2865F3CB00617C43 /* CharacterDetailViewController.swift */,
 				6B20D2002865F42100617C43 /* CharacterDetailViewModel.swift */,
 			);
-			path = Detail;
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		6B20D20F2869B2A100617C43 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				6B20D2162869B44000617C43 /* response.json */,
+				6B20D2102869B2BB00617C43 /* MockNetworkCharacterUseCase.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		6B20D2182869B44B00617C43 /* CharacterListing */ = {
+			isa = PBXGroup;
+			children = (
+				6B20D2192869B46200617C43 /* TestCharacterViewModel.swift */,
+			);
+			path = CharacterListing;
+			sourceTree = "<group>";
+		};
+		6B20D21D2869BAE500617C43 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6B20D2122869B33200617C43 /* TestUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6B20D21E2869BAF800617C43 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6B20D2142869B37A00617C43 /* MockNetworkClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B20D2172869B44000617C43 /* response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +460,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B20D2112869B2BB00617C43 /* MockNetworkCharacterUseCase.swift in Sources */,
+				6B20D2152869B37A00617C43 /* MockNetworkClient.swift in Sources */,
+				6B20D2132869B33200617C43 /* TestUtils.swift in Sources */,
+				6B20D21A2869B46200617C43 /* TestCharacterViewModel.swift in Sources */,
 				6B20D1BB2865D78500617C43 /* TUI_Coding_ChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
